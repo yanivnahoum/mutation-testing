@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'maven'
+    id 'info.solidsoft.pitest' version '1.4.0'
+}
+
+repositories {
+    maven {
+        url = 'http://mavencentral.it.att.com:8081/nexus/content/groups/att-public-group'
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.1.2.RELEASE'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.1.2.RELEASE'
+}
+
+group = 'com.att.training.demo'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
