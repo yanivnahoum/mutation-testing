@@ -1,6 +1,11 @@
 package com.att.training.demo.mutations;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 class Calculator {
+
+    private static final Logger log = LoggerFactory.getLogger(Calculator.class);
 
     /**
      * MATH_MUTATOR: x - y
@@ -38,4 +43,16 @@ class Calculator {
     int decrement(int x) {
         return --x;
     }
+
+    /**
+     * MATH_MUTATOR: x - y
+     * VOID_METHOD_CALL_MUTATOR: removed call to service.setResult()
+     * RETURN_VALS_MUTATOR: result == 0 ? 1 : 0
+     */
+    int addAndSet(int x, int y, Service service) {
+        int result = x + y;
+        service.setResult(result);
+        return result;
+    }
 }
+

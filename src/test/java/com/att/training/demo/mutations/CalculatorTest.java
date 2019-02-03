@@ -4,6 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 public class CalculatorTest {
 
@@ -42,5 +44,13 @@ public class CalculatorTest {
     public void decrementSubtractsOne() {
         int result = calculator.decrement(10);
         assertThat(result).isEqualTo(9);
+    }
+
+    @Test
+    public void addAndSet() {
+        Service service = mock(Service.class);
+        int result = calculator.addAndSet(2, 3, service);
+        assertThat(result).isEqualTo(5);
+        verify(service).setResult(result);
     }
 }
