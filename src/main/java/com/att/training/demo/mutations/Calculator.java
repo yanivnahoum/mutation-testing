@@ -52,6 +52,7 @@ class Calculator {
     int addAndSet(int x, int y, Service service) {
         int result = x + y;
         service.setResult(result);
+        log.info("#addAndSet - got {}", result);
         return result;
     }
 }
