@@ -87,4 +87,8 @@
             </plugin>
         </plugins>
     </build>
+
+    <scm>
+        <connection>scm:git:ssh://git@codecloud.web.att.com:7999/st_traindemo/mutation-testing.git</connection>
+    </scm>
 </project>
