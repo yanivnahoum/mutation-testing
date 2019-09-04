@@ -1,4 +1,5 @@
 import info.solidsoft.gradle.pitest.PitestPluginExtension
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 
 plugins {
     java
@@ -30,10 +31,19 @@ repositories {
 }
 
 dependencies {
-    val mockitoVersion = "2.28.2"
+    val mockitoVersion = "3.0.0"
     implementation("org.slf4j:slf4j-simple:1.7.26")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.4.2")
-    testImplementation("org.assertj:assertj-core:3.12.2")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.5.1")
+    testImplementation("org.assertj:assertj-core:3.13.2")
     testImplementation("org.mockito:mockito-core:$mockitoVersion")
     testImplementation("org.mockito:mockito-junit-jupiter:$mockitoVersion")
+}
+
+tasks.test {
+    useJUnitPlatform()
+    testLogging {
+        events("passed", "skipped", "failed")
+        showStandardStreams = true
+        exceptionFormat = TestExceptionFormat.SHORT
+    }
 }
