@@ -31,7 +31,7 @@ class CalculatorTest {
     @CsvSource({
             "7, 7",
             "0, 0",
-            "-7, 7"
+            "-7, 7",
     })
     void givenX_absReturnsY(int input, int expected) {
         int actual = calculator.abs(input);
