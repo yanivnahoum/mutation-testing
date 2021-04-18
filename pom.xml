@@ -16,7 +16,7 @@
         <assertj.version>3.19.0</assertj.version>
         <mockito.version>3.8.0</mockito.version>
         <pitest.version>1.6.4</pitest.version>
-        <pitest-junit5-plugin.version>0.12</pitest-junit5-plugin.version>
+        <pitest-junit5-plugin.version>0.14</pitest-junit5-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     </properties>
