@@ -19,9 +19,9 @@ repositories {
 
 dependencies {
     implementation("org.slf4j:slf4j-simple:1.7.30")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.7.2")
     testImplementation("org.assertj:assertj-core:3.19.0")
-    val mockitoVersion = "3.9.0"
+    val mockitoVersion = "3.10.0"
     testImplementation("org.mockito:mockito-core:$mockitoVersion")
     testImplementation("org.mockito:mockito-junit-jupiter:$mockitoVersion")
 }
