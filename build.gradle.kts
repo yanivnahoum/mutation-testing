@@ -5,7 +5,7 @@ plugins {
 }
 
 pitest {
-    pitestVersion.set("1.9.0")
+    pitestVersion.set("1.9.2")
     junit5PluginVersion.set("1.0.0")
 }
 
@@ -34,7 +34,7 @@ tasks {
     test {
         useJUnitPlatform()
         testlogger {
-            showStandardStreams = false
+            showStandardStreams = true
         }
     }
 }
