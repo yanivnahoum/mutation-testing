@@ -92,7 +92,7 @@
     </build>
 
     <scm>
-        <connection>scm:git:ssh://git@codecloud.web.att.com:7999/st_traindemo/mutation-testing.git</connection>
-        <url>https://codecloud.web.att.com/projects/ST_TRAINDEMO/repos/mutation-testing/browse</url>
+        <connection>scm:git:ssh://git@github.com:yanivnahoum/mutation-testing.git</connection>
+        <url>https://github.com/yanivnahoum/mutation-testing</url>
     </scm>
 </project>
