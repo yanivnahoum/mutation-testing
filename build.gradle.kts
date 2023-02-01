@@ -1,12 +1,12 @@
 plugins {
     java
-    id("info.solidsoft.pitest") version "1.9.0"
+    id("info.solidsoft.pitest") version "1.9.11"
     id("com.adarshr.test-logger") version "3.2.0"
 }
 
 pitest {
-    pitestVersion.set("1.9.10")
-    junit5PluginVersion.set("1.1.0")
+    pitestVersion.set("1.11.0")
+    junit5PluginVersion.set("1.1.2")
 }
 
 group = "com.att.training.demo"
@@ -18,10 +18,10 @@ repositories {
 }
 
 dependencies {
-    implementation("org.slf4j:slf4j-simple:2.0.3")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
-    testImplementation("org.assertj:assertj-core:3.23.1")
-    val mockitoVersion = "4.9.0"
+    implementation("org.slf4j:slf4j-simple:2.0.6")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
+    testImplementation("org.assertj:assertj-core:3.24.2")
+    val mockitoVersion = "5.1.1"
     testImplementation("org.mockito:mockito-core:$mockitoVersion")
     testImplementation("org.mockito:mockito-junit-jupiter:$mockitoVersion")
 }
