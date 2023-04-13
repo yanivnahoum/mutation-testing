@@ -5,7 +5,7 @@ plugins {
 }
 
 pitest {
-    pitestVersion.set("1.11.0")
+    pitestVersion.set("1.12.0")
     junit5PluginVersion.set("1.1.2")
 }
 
@@ -18,10 +18,10 @@ repositories {
 }
 
 dependencies {
-    implementation("org.slf4j:slf4j-simple:2.0.6")
+    implementation("org.slf4j:slf4j-simple:2.0.7")
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
     testImplementation("org.assertj:assertj-core:3.24.2")
-    val mockitoVersion = "5.1.1"
+    val mockitoVersion = "5.2.0"
     testImplementation("org.mockito:mockito-core:$mockitoVersion")
     testImplementation("org.mockito:mockito-junit-jupiter:$mockitoVersion")
 }
