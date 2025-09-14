@@ -1,15 +1,11 @@
-import org.gradle.api.tasks.testing.logging.TestExceptionFormat
-
 plugins {
     java
     id("info.solidsoft.pitest") version "1.6.0"
-}
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_11
+    id("com.adarshr.test-logger") version "3.0.0"
 }
 
 pitest {
+    pitestVersion.set("1.6.4")
     junit5PluginVersion.set("0.12")
 }
 
@@ -30,27 +26,15 @@ dependencies {
     testImplementation("org.mockito:mockito-junit-jupiter:$mockitoVersion")
 }
 
-tasks.test {
-    useJUnitPlatform()
-    testLogging {
-        events("passed", "skipped", "failed")
-        showStandardStreams = true
-        exceptionFormat = TestExceptionFormat.SHORT
+tasks {
+    withType<JavaCompile>().configureEach {
+        options.release.set(11)
     }
 
-    addTestListener(object : TestListener {
-        override fun beforeSuite(p0: TestDescriptor?) {}
-
-        override fun beforeTest(p0: TestDescriptor?) {}
-
-        override fun afterTest(p0: TestDescriptor?, p1: TestResult?) {}
-
-        override fun afterSuite(testDescriptor: TestDescriptor?, testResult: TestResult?) {
-            if (testDescriptor?.parent == null && testResult != null) printResults(testResult)
+    test {
+        useJUnitPlatform()
+        testlogger {
+            showStandardStreams = false
         }
-    })
-}
-
-fun printResults(result: TestResult) {
-    println("Results: ${result.resultType} (${result.testCount} tests, ${result.successfulTestCount} successes, ${result.failedTestCount} failures, ${result.skippedTestCount} skipped)")
+    }
 }
