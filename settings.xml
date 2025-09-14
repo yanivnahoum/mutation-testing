@@ -3,10 +3,10 @@
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
     <proxies>
         <proxy>
-            <id>one-proxy</id>
+            <id>http-proxy</id>
             <active>true</active>
             <protocol>http</protocol>
-            <host>one.proxy.att.com</host>
+            <host>emea-chain.proxy.att.com</host>
             <port>8080</port>
             <nonProxyHosts>mavencentral.it.att.com</nonProxyHosts>
         </proxy>
@@ -15,7 +15,7 @@
             <id>https-proxy</id>
             <active>true</active>
             <protocol>https</protocol>
-            <host>one.proxy.att.com</host>
+            <host>emea-chain.proxy.att.com</host>
             <port>8080</port>
             <nonProxyHosts>mavencentral.it.att.com</nonProxyHosts>
         </proxy>

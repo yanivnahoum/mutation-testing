@@ -11,12 +11,12 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
-        <slf4j.version>1.7.29</slf4j.version>
-        <junit-jupiter.version>5.5.2</junit-jupiter.version>
-        <assertj.version>3.14.0</assertj.version>
-        <mockito.version>3.2.0</mockito.version>
-        <pitest.version>1.4.10</pitest.version>
-        <pitest-junit5-plugin.version>0.10</pitest-junit5-plugin.version>
+        <slf4j.version>1.7.30</slf4j.version>
+        <junit-jupiter.version>5.6.0</junit-jupiter.version>
+        <assertj.version>3.15.0</assertj.version>
+        <mockito.version>3.2.4</mockito.version>
+        <pitest.version>1.5.0</pitest.version>
+        <pitest-junit5-plugin.version>0.12</pitest-junit5-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     </properties>
@@ -84,6 +84,14 @@
                         <version>${pitest-junit5-plugin.version}</version>
                     </dependency>
                 </dependencies>
+                <configuration>
+<!--                    <excludedClasses>-->
+<!--                        <excludedClass>com.att.training.demo.mutations.Calculator</excludedClass>-->
+<!--                    </excludedClasses>-->
+<!--                    <excludedTestClasses>-->
+<!--                        <excludedTestClass>com.att.training.demo.mutations.CalculatorTest</excludedTestClass>-->
+<!--                    </excludedTestClasses>-->
+                </configuration>
             </plugin>
         </plugins>
     </build>
