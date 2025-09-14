@@ -23,6 +23,7 @@
         <pitest-junit5-plugin.version>1.2.3</pitest-junit5-plugin.version>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
+        <jacoco.version>0.8.13</jacoco.version>
     </properties>
 
     <dependencies>
@@ -73,6 +74,26 @@
 
         <plugins>
             <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <executions>
+                    <execution>
+                        <id>default-prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-report</id>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
                 <version>${pitest.version}</version>
@@ -84,19 +105,16 @@
                     </dependency>
                 </dependencies>
                 <configuration>
-<!--                    <excludedClasses>-->
-<!--                        <excludedClass>com.att.training.demo.mutations.Calculator</excludedClass>-->
-<!--                    </excludedClasses>-->
-<!--                    <excludedTestClasses>-->
-<!--                        <excludedTestClass>com.att.training.demo.mutations.CalculatorTest</excludedTestClass>-->
-<!--                    </excludedTestClasses>-->
+                    <features>
+                        <feature>+auto_threads</feature>
+                    </features>
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
     <scm>
-        <connection>scm:git:ssh://git@codecloud.web.att.com:7999/st_traindemo/mutation-testing.git</connection>
-        <url>https://codecloud.web.att.com/projects/ST_TRAINDEMO/repos/mutation-testing/browse</url>
+        <connection>scm:git: https://github.com/yanivnahoum/mutation-testing.git</connection>
+        <url>https://github.com/yanivnahoum/mutation-testing</url>
     </scm>
 </project>

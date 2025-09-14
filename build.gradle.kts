@@ -1,5 +1,6 @@
 plugins {
     java
+    jacoco
     id("info.solidsoft.pitest") version "1.19.0-rc.1"
     id("com.adarshr.test-logger") version "4.0.0"
 }
@@ -22,12 +23,6 @@ repositories {
     mavenCentral()
 }
 
-configurations {
-    compileOnly {
-        extendsFrom(configurations.annotationProcessor.get())
-    }
-}
-
 val mockitoAgent = configurations.create("mockitoAgent")
 dependencies {
     implementation("org.slf4j:slf4j-simple:2.0.17")
@@ -38,10 +33,15 @@ dependencies {
     testImplementation("org.mockito:mockito-junit-jupiter:$mockitoVersion")
 }
 
+jacoco {
+    toolVersion = "0.8.13"
+}
+val jacocoTestReport = tasks.jacocoTestReport
 tasks {
     test {
         useJUnitPlatform()
         jvmArgs("-javaagent:${mockitoAgent.asPath}")
+        finalizedBy(jacocoTestReport)
         testlogger {
             showStandardStreams = true
         }
