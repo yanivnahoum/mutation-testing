@@ -6,7 +6,7 @@ plugins {
 
 pitest {
     pitestVersion.set("1.6.4")
-    junit5PluginVersion.set("0.12")
+    junit5PluginVersion.set("0.14")
 }
 
 group = "com.att.training.demo"
