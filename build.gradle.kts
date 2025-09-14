@@ -12,7 +12,7 @@ java {
 buildscript {
     val pitest = configurations.maybeCreate("pitest")
     dependencies {
-        classpath("info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.4.6")
+        classpath("info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.4.7")
         pitest("org.pitest:pitest-junit5-plugin:0.12")
     }
 }
@@ -34,9 +34,10 @@ repositories {
 }
 
 dependencies {
-    val mockitoVersion = "3.2.4"
+    val mockitoVersion = "3.3.3"
     implementation("org.slf4j:slf4j-simple:1.7.30")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.6.0")
+
+    testImplementation("org.junit.jupiter:junit-jupiter:5.6.1")
     testImplementation("org.assertj:assertj-core:3.15.0")
     testImplementation("org.mockito:mockito-core:$mockitoVersion")
     testImplementation("org.mockito:mockito-junit-jupiter:$mockitoVersion")
