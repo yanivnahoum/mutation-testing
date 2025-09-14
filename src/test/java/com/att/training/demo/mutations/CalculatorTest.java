@@ -14,7 +14,6 @@ import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 class CalculatorTest {
-
     private Calculator calculator;
 
     @BeforeEach
@@ -29,11 +28,12 @@ class CalculatorTest {
     }
 
     @ParameterizedTest(name = "{index}: abs({0}) = {1}")
-    @CsvSource({
-            "7, 7",
-            "0, 0",
-            "-7, 7",
-    })
+    @CsvSource(textBlock = """
+            7, 7
+            0, 0
+            -7, 7
+            """
+    )
     void givenX_absReturnsY(int input, int expected) {
         int actual = calculator.abs(input);
         assertThat(actual).isEqualTo(expected);
