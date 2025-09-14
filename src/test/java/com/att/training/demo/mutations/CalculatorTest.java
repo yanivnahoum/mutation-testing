@@ -1,54 +1,57 @@
 package com.att.training.demo.mutations;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-public class CalculatorTest {
+@ExtendWith(MockitoExtension.class)
+class CalculatorTest {
 
     private Calculator calculator;
 
-    @Before
-    public void setUp() {
+    @BeforeEach
+    void setUp() {
         calculator = new Calculator();
     }
 
     @Test
-    public void add_returnSum() {
+    void add_returnSum() {
         int result = calculator.add(2, 3);
         assertThat(result).isEqualTo(5);
     }
 
-    @Test
-    public void givenPositiveNumber_abs_returnsAbsolute() {
-        int result = calculator.abs(7);
-        assertThat(result).isEqualTo(7);
+    @ParameterizedTest
+    @CsvSource({
+            "7, 7",
+            "0, 0",
+            "-7, 7"
+    })
+    void givenX_absReturnsY(int input, int expected) {
+        int actual = calculator.abs(input);
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Test
-    public void givenNegativeNumber_abs_returnsAbsolute() {
-        int result = calculator.abs(-7);
-        assertThat(result).isEqualTo(7);
-    }
-
-    @Test
-    public void incrementAddsOne() {
+    void incrementAddsOne() {
         int result = calculator.increment(10);
         assertThat(result).isEqualTo(11);
     }
 
     @Test
-    public void decrementSubtractsOne() {
+    void decrementSubtractsOne() {
         int result = calculator.decrement(10);
         assertThat(result).isEqualTo(9);
     }
 
     @Test
-    public void addAndSet() {
-        Service service = mock(Service.class);
+    void addAndSet(@Mock Service service) {
         int result = calculator.addAndSet(2, 3, service);
         assertThat(result).isEqualTo(5);
         verify(service).setResult(result);
