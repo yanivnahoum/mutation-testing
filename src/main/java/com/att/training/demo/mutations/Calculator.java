@@ -11,7 +11,7 @@ class Calculator {
      * MATH_MUTATOR: x - y
      * RETURN_VALS_MUTATOR: result == 0 ? 1 : 0
      */
-    int add(int x, int y) {
+    public int add(int x, int y) {
         return x + y;
     }
 
@@ -21,7 +21,7 @@ class Calculator {
      * INVERT_NEGS_MUTATOR: -value -> value
      * RETURN_VALS_MUTATOR: result == 0 ? 1 : 0
      */
-    int abs(int value) {
+    public int abs(int value) {
         if (value < 0) {
             return -value;
         }
@@ -32,7 +32,7 @@ class Calculator {
      * INCREMENTS_MUTATOR: ++x -> --x
      * RETURN_VALS_MUTATOR: result == 0 ? 1 : 0
      */
-    int increment(int x) {
+    public int increment(int x) {
         return ++x;
     }
 
@@ -40,7 +40,7 @@ class Calculator {
      * INCREMENTS_MUTATOR: --x -> ++x
      * RETURN_VALS_MUTATOR: result == 0 ? 1 : 0
      */
-    int decrement(int x) {
+    public int decrement(int x) {
         return --x;
     }
 
@@ -49,7 +49,7 @@ class Calculator {
      * VOID_METHOD_CALL_MUTATOR: removed call to service.setResult()
      * RETURN_VALS_MUTATOR: result == 0 ? 1 : 0
      */
-    int addAndSet(int x, int y, Service service) {
+    public int addAndSet(int x, int y, Service service) {
         int result = x + y;
         service.setResult(result);
         log.info("#addAndSet - got {}", result);
