@@ -28,7 +28,7 @@ class CalculatorTest {
         assertThat(result).isEqualTo(5);
     }
 
-    @ParameterizedTest(name = "{index} => abs({0}) = {1}")
+    @ParameterizedTest(name = "{index}: abs({0}) = {1}")
     @CsvSource({
             "7, 7",
             "0, 0",
