@@ -7,7 +7,7 @@ class Calculator {
     private static final Logger log = LoggerFactory.getLogger(Calculator.class);
 
     /**
-     * MATH_MUTATOR: x - y
+     * MATH_MUTATOR: x - y <br>
      * RETURN_VALS_MUTATOR: result == 0 ? 1 : 0
      */
     public int add(int x, int y) {
@@ -15,9 +15,9 @@ class Calculator {
     }
 
     /**
-     * NEGATE_CONDITIONALS_MUTATOR: value < 0 -> value > 0
-     * CONDITIONALS_BOUNDARY_MUTATOR: value <= 0 (makes no difference, and mutation survives)
-     * INVERT_NEGS_MUTATOR: -value -> value
+     * NEGATE_CONDITIONALS_MUTATOR: value < 0 -> value > 0 <br>
+     * CONDITIONALS_BOUNDARY_MUTATOR: value <= 0 (makes no difference, and mutation survives) <br>
+     * INVERT_NEGS_MUTATOR: -value -> value <br>
      * RETURN_VALS_MUTATOR: result == 0 ? 1 : 0
      */
     public int abs(int value) {
@@ -28,7 +28,7 @@ class Calculator {
     }
 
     /**
-     * INCREMENTS_MUTATOR: ++x -> --x
+     * INCREMENTS_MUTATOR: ++x -> --x <br>
      * RETURN_VALS_MUTATOR: result == 0 ? 1 : 0
      */
     public int increment(int x) {
@@ -36,7 +36,7 @@ class Calculator {
     }
 
     /**
-     * INCREMENTS_MUTATOR: --x -> ++x
+     * INCREMENTS_MUTATOR: --x -> ++x <br>
      * RETURN_VALS_MUTATOR: result == 0 ? 1 : 0
      */
     public int decrement(int x) {
@@ -44,8 +44,8 @@ class Calculator {
     }
 
     /**
-     * MATH_MUTATOR: x - y
-     * VOID_METHOD_CALL_MUTATOR: removed call to service.setResult()
+     * MATH_MUTATOR: x - y <br>
+     * VOID_METHOD_CALL_MUTATOR: removed call to service.setResult() <br>
      * RETURN_VALS_MUTATOR: result == 0 ? 1 : 0
      */
     public int addAndSet(int x, int y, Service service) {
