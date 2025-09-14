@@ -2,7 +2,7 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 
 plugins {
     java
-    id("info.solidsoft.pitest") version "1.5.1"
+    id("info.solidsoft.pitest") version "1.6.0"
 }
 
 java {
@@ -23,9 +23,9 @@ repositories {
 
 dependencies {
     implementation("org.slf4j:slf4j-simple:1.7.30")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.6.2")
-    testImplementation("org.assertj:assertj-core:3.17.2")
-    val mockitoVersion = "3.5.10"
+    testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
+    testImplementation("org.assertj:assertj-core:3.19.0")
+    val mockitoVersion = "3.8.0"
     testImplementation("org.mockito:mockito-core:$mockitoVersion")
     testImplementation("org.mockito:mockito-junit-jupiter:$mockitoVersion")
 }
