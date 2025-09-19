@@ -119,9 +119,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <scm>
-        <connection>scm:git: https://github.com/yanivnahoum/mutation-testing.git</connection>
-        <url>https://github.com/yanivnahoum/mutation-testing</url>
-    </scm>
 </project>
